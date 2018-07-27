@@ -20,6 +20,19 @@
   <app-counter [digit]="4" (change)="onCoinChange($event)"></app-counter>
 </section>
 
-<section class="result">
-  {{durationRate}}
-</section>
+<table>
+  <thead>
+  <tr>
+    <th>玉持</th>
+    <th>Big率</th>
+    <th>Reg率</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{durationRate}}</td>
+    <td>{{bigRate}}</td>
+    <td>{{regRate}}</td>
+  </tr>
+  </tbody>
+</table>

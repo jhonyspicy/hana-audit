@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.styl']
 })
 export class AppComponent {
-  title = 'My first Pages';
   isNegative = false;
   durationRate:number = 0;
+  bigRate:number = 0;
+  regRate:number = 0;
 
   big:number = 0;
   reg:number = 0;
@@ -48,5 +49,7 @@ export class AppComponent {
     const pow = 100;
 
     this.durationRate = Math.round(result * pow) / pow;
+    this.bigRate = Math.round(this.total / this.big * pow) / pow;
+    this.regRate = Math.round(this.total / this.reg * pow) / pow;
   }
 }
