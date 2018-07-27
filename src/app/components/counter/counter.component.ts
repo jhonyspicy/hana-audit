@@ -7,21 +7,19 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class CounterComponent implements OnInit {
   @Input() digit = 2;
-  @Output() onChange = new EventEmitter<boolean>();
+  @Output() change = new EventEmitter<number>();
 
-  i:number = 0;
+  numberList:number[];
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.digit);
+    this.numberList = Array(this.digit);
   }
 
-  increase() {
-    ++this.i;
-  }
-
-  decrease() {
-    --this.i;
+  onChange(n, i) {
+    this.numberList[i] = n;
+    const sum = this.numberList.reduce((i, j)=>i+j);
+    this.change.emit(sum);
   }
 }

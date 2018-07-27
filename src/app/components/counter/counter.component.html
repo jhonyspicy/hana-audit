@@ -1,3 +1,1 @@
-<button (click)="increase()">+</button>
-<div>{{i}}</div>
-<button (click)="decrease()">-</button>
+<app-digit *ngFor="let n of digit | range; index as i" [digit]="digit - i" (change)="onChange($event, i)"></app-digit>
