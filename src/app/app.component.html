@@ -1,10 +1,25 @@
-Big
-<app-counter [digit]="2" (change)="onBigChange($event)"></app-counter>
 
-Reg
-<app-counter [digit]="2" (change)="onRegChange($event)"></app-counter>
+<section class="big">
+  <h2>Big</h2>
+  <app-counter [digit]="2" (change)="onBigChange($event)"></app-counter>
+</section>
 
-Total
-<app-counter [digit]="5" (change)="onTotalChange($event)"></app-counter>
+<section class="reg">
+  <h2>Reg</h2>
+  <app-counter [digit]="2" (change)="onRegChange($event)"></app-counter>
+</section>
 
+<section class="total">
+  <h2>総回転数</h2>
+  <app-counter [digit]="5" (change)="onTotalChange($event)"></app-counter>
+</section>
 
+<section class="coin">
+  <h2>差枚数</h2>
+  <button class="negative" [class.active]="isNegative" (click)="toggleNegative()">-</button>
+  <app-counter [digit]="4" (change)="onCoinChange($event)"></app-counter>
+</section>
+
+<section class="result">
+  {{durationRate}}
+</section>
